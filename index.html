@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="A beautiful, functional calculator app">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+</head>
+<body>
+    <div class="calculator">
+        <!-- Header -->
+        <div class="header">
+            <h1>Calculator</h1>
+        </div>
+
+        <!-- Display -->
+        <div class="display-container">
+            <div class="previous-operand" id="previousOperand"></div>
+            <div class="current-operand" id="currentOperand">0</div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button class="btn btn-function" onclick="calculator.clear()">AC</button>
+            <button class="btn btn-function" onclick="calculator.delete()">DEL</button>
+            <button class="btn btn-function" onclick="calculator.percentage()">%</button>
+            <button class="btn btn-operator" onclick="calculator.chooseOperation('÷')">÷</button>
+
+            <!-- Row 2 -->
+            <button class="btn btn-number" onclick="calculator.appendNumber('7')">7</button>
+            <button class="btn btn-number" onclick="calculator.appendNumber('8')">8</button>
+            <button class="btn btn-number" onclick="calculator.appendNumber('9')">9</button>
+            <button class="btn btn-operator" onclick="calculator.chooseOperation('×')">×</button>
+
+            <!-- Row 3 -->
+            <button class="btn btn-number" onclick="calculator.appendNumber('4')">4</button>
+            <button class="btn btn-number" onclick="calculator.appendNumber('5')">5</button>
+            <button class="btn btn-number" onclick="calculator.appendNumber('6')">6</button>
+            <button class="btn btn-operator" onclick="calculator.chooseOperation('-')">−</button>
+
+            <!-- Row 4 -->
+            <button class="btn btn-number" onclick="calculator.appendNumber('1')">1</button>
+            <button class="btn btn-number" onclick="calculator.appendNumber('2')">2</button>
+            <button class="btn btn-number" onclick="calculator.appendNumber('3')">3</button>
+            <button class="btn btn-operator" onclick="calculator.chooseOperation('+')">+</button>
+
+            <!-- Row 5 -->
+            <button class="btn btn-number btn-zero" onclick="calculator.appendNumber('0')">0</button>
+            <button class="btn btn-number" onclick="calculator.appendNumber('.')">.</button>
+            <button class="btn btn-equals" onclick="calculator.compute()">=</button>
+        </div>
+
+        <!-- Install Button (shown only if app can be installed) -->
+        <button class="install-btn" id="installBtn" style="display: none;">
+            📥 Install App
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
